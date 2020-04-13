@@ -13,7 +13,7 @@ export default StyleSheet.create({
   text: {
     position: 'absolute',
     marginTop: 10,
-    marginLeft: 10,
+    marginLeft: 30,
     marginRight: 65,
     color: colors.white,
     fontSize: 36,
