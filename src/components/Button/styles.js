@@ -1,12 +1,17 @@
 import { StyleSheet } from 'react-native';
 import colors from '../../assets/colors';
 
-export const styles = StyleSheet.create({
-  container = {
-    flex: 1
+export default StyleSheet.create({
+  container: {
+    width: '40%',
+    height: '100%',
+    borderRadius: 10,
+    margin: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   text: {
-    fontSize: '18',
+    fontSize: 18,
     fontWeight: 'bold',
   },
 
