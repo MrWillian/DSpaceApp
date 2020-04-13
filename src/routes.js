@@ -5,12 +5,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 const AppStack = createStackNavigator();
 
 import Splash from './pages/Splash';
+import Login from './pages/Login';
 
 export default function Routes() {
   return (
     <NavigationContainer>
       <AppStack.Navigator screenOptions={{ headerShown: false }}>
         <AppStack.Screen name="Splash" component={Splash} />
+        <AppStack.Screen name="Login" component={Login} />
       </AppStack.Navigator>
     </NavigationContainer>
   );
