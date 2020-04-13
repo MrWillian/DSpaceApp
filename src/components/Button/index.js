@@ -1,12 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 
 import styles from './styles';
 
-export const Button = ({ type, text }) => {
+export default function Button({ type, text }) {
   return (
-    <View style={[styles.container, type == 'Login' ? styles.loginBtn : styles.registerBtn]}>
-      <Text style={[styles.text, type == 'Login' ? styles.loginText : styles.registerText]}>{text}</Text>
-    </View>
+    <TouchableOpacity style={[styles.container, type == 'Login' ? styles.loginBtn : styles.registerBtn]}>
+      <Text style={[styles.text, type == 'Login' ? styles.loginText : styles.registerText]}>
+        {text}
+      </Text>
+    </TouchableOpacity>
   );
 }
