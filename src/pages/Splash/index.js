@@ -10,7 +10,6 @@ export default function Splash() {
   const navigation = useNavigation();
 
   function navigateToLogin() {
-    console.log('Login');
     navigation.navigate('Login');
   }
 
