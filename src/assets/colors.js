@@ -5,6 +5,8 @@ export default colors = {
 
   font: '#23527C',
   
+  cinza1: '#737E88',
+
   white: '#FFF',
   black: '#000',
 }
