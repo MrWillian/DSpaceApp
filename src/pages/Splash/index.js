@@ -18,8 +18,13 @@ export default function Splash() {
       <ImageBackground source={image} style={styles.image} />
       <Text style={styles.text}>Nós te Mantemos Localizado</Text>
       <View style={styles.groupButton}>
-        <Button type="Login" text="Login" onPress={navigateToLogin} />
-        <Button type="Register" text="Registrar" />
+        <Button 
+          type="Login" text="Login" 
+          buttonStyle={{ width: '40%', height: '100%' }}
+          onPress={navigateToLogin} />
+        <Button 
+          type="Register" text="Registrar"
+          buttonStyle={{ width: '40%', height: '100%' }} />
       </View>
     </SafeAreaView>
   );
