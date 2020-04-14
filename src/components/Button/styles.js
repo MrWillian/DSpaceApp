@@ -3,8 +3,6 @@ import colors from '../../assets/colors';
 
 export default StyleSheet.create({
   container: {
-    width: '40%',
-    height: '100%',
     borderRadius: 10,
     margin: 5,
     alignItems: 'center',
