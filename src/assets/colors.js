@@ -1,5 +1,6 @@
 export default colors = {
   primary: '#FFFCFC',
+  secundary: '#18172C',
 
   accent: '#F88703',
 
