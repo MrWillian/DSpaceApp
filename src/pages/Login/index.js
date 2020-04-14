@@ -31,7 +31,7 @@ export default function Login() {
           <Text>Esqueceu sua senha?</Text>
         </TouchableOpacity>
         <Button 
-          type="Login" text="Login" 
+          type="Primary" text="Login" 
           buttonStyle={{ width: '40%', height: '10%', alignSelf: 'center', marginTop: 30 }} />
       </View>
       <View style={styles.footer}>
