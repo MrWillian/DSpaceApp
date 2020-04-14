@@ -43,7 +43,7 @@ export default function Register() {
           />
         </View>
         <Button 
-          type="Register" text="Registrar" 
+          type="Secundary" text="Registrar" 
           buttonStyle={{ 
             width: '40%', height: '10%', alignSelf: 'center', marginTop: 30, borderWidth: 0.5, borderColor: colors.accent
           }} />
