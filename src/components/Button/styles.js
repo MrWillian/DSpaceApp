@@ -13,16 +13,17 @@ export default StyleSheet.create({
     fontWeight: 'bold',
   },
 
-  loginBtn: {
+  primaryBtn: {
     backgroundColor: colors.accent,
   },
-  registerBtn: {
+  secundaryBtn: {
     backgroundColor: colors.white,
   },
-  loginText: {
+  
+  primaryText: {
     color: colors.white,
   },
-  registerText: {
+  secundaryText: {
     color: colors.accent,
   },
 });
