@@ -23,5 +23,32 @@ export const styles = StyleSheet.create({
     paddingTop: 50,
     width: '100%',
     height: '70%',
-  }
+    justifyContent: 'center',
+    color: colors.font,
+    borderBottomWidth: 0.5,
+    borderBottomColor: colors.cinza1,
+  },
+  label: {
+    fontSize: 18,
+    color: colors.font,
+  },
+  textInput: {
+    borderBottomWidth: 0.3,
+    borderColor: colors.black,
+    color: colors.font,
+    borderRadius: 5
+  },
+  forgetPassword: {
+    color: colors.font,
+    alignSelf: 'flex-end'
+  },
+  footer: {
+    flex: 1,
+    marginBottom: 2,
+  },
+  image: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center"
+  },
 });
