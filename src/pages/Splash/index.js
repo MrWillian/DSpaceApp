@@ -23,11 +23,11 @@ export default function Splash() {
       <Text style={styles.text}>Nós te Mantemos Localizado</Text>
       <View style={styles.groupButton}>
         <Button 
-          type="Login" text="Login" 
+          type="Primary" text="Login" 
           buttonStyle={{ width: '40%', height: '100%' }}
           onPress={navigateToLogin} />
         <Button 
-          type="Register" text="Registrar"
+          type="Secundary" text="Registrar"
           buttonStyle={{ width: '40%', height: '100%' }}
           onPress={navigateToRegister} />
       </View>
