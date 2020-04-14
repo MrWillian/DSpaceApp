@@ -13,6 +13,10 @@ export default function Splash() {
     navigation.navigate('Login');
   }
 
+  function navigateToRegister() {
+    navigation.navigate('Register');
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={image} style={styles.image} />
@@ -24,7 +28,8 @@ export default function Splash() {
           onPress={navigateToLogin} />
         <Button 
           type="Register" text="Registrar"
-          buttonStyle={{ width: '40%', height: '100%' }} />
+          buttonStyle={{ width: '40%', height: '100%' }}
+          onPress={navigateToRegister} />
       </View>
     </SafeAreaView>
   );
