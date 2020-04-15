@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { styles } from './styles';
@@ -16,6 +17,20 @@ export default function Main() {
           <Icon style={styles.menuIcon} name="bars" size={15} />
         </TouchableOpacity>
       </View>
+
+      <MapView
+       provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+       style={styles.map}
+       region={{
+         latitude: 37.78825,
+         longitude: -122.4324,
+         latitudeDelta: 0.015,
+         longitudeDelta: 0.0121,
+       }}
+      >
+        
+      </MapView>
+
       <View style={styles.containerBottomButtons}>
         <TouchableOpacity style={styles.btnLeft}>
           <Icon style={styles.icon} name="bookmark" size={18} />
