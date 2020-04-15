@@ -43,5 +43,47 @@ export const styles = StyleSheet.create({
   },
   menuIcon: {
     color: colors.white,
+  },
+  containerBottomButtons: {
+    width: '100%',
+    height: '10%',
+    position: 'absolute',
+    bottom: 0,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  btnLeft: {
+    width: 35,
+    height: 35,
+    backgroundColor: colors.secundary,
+    borderRadius: 35,
+    elevation: 15,
+    margin: '5%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  btnMiddle: {
+    width: 60,
+    height: 60,
+    backgroundColor: colors.accent,
+    borderRadius: 60,
+    elevation: 15,
+    margin: '5%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  icon: {
+    color: colors.white
+  },
+  btnRight: {
+    width: 35,
+    height: 35,
+    backgroundColor: colors.secundary,
+    borderRadius: 35,
+    elevation: 15,
+    margin: '5%',
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 });
