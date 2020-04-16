@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { SafeAreaView, View, TouchableOpacity, TextInput, ImageBackground, Text } from 'react-native';
 
+import { useNavigation } from '@react-navigation/native';
+
 import Button from '../../components/Button';
 
 import image from '../../assets/images/splash-background.jpg';
@@ -9,6 +11,12 @@ import { styles } from './styles';
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const navigation = useNavigation();
+
+  function handleLogin() {
+    navigation.navigate('Main');
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -32,7 +40,9 @@ export default function Login() {
         </TouchableOpacity>
         <Button 
           type="Primary" text="Login" 
-          buttonStyle={{ width: '40%', height: '10%', alignSelf: 'center', marginTop: 30 }} />
+          buttonStyle={{ width: '40%', height: '10%', alignSelf: 'center', marginTop: 30 }}
+          onPress={handleLogin} />
+          
       </View>
       <View style={styles.footer}>
         <ImageBackground source={image} style={styles.image} />
