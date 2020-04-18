@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import { useRoute } from '@react-navigation/native';
+
 import { styles } from './styles';
 
 export default function Main() {
-  mapStyle = [
+  const mapStyle = [
     {
       "elementType": "geometry",
       "stylers": [
@@ -236,7 +238,13 @@ export default function Main() {
         }
       ]
     }
-  ]
+  ];
+
+  const route = useRoute();
+
+  useEffect(() => {
+    console.log('user - main', route.params.user);
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -251,7 +259,7 @@ export default function Main() {
       </View>
 
       <MapView
-       provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+       provider={PROVIDER_GOOGLE}
        style={styles.map}
        region={{
          latitude: 37.78825,
