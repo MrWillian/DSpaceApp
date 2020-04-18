@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SafeAreaView, View, TextInput, Text, Alert } from 'react-native';
 import { CheckBox } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
@@ -16,6 +16,15 @@ export default function Register() {
   const [checkTermsAndServices, setCheckTermsAndServices] = useState(true);
 
   const navigation = useNavigation();
+
+  useEffect(() => {
+    storage.load({ key: 'userState',})
+    .then(user => {
+      navigation.navigate('Main', user);
+    }).catch(err => {
+      console.log(err.message);
+    })
+  }, []);
 
   async function handleRegisterUser() {
     const isCreated = await createUser(username, email, password);
