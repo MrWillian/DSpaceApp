@@ -3,6 +3,7 @@ import api from '../services/api';
 export async function createUser(username, email, password){
   try {
     const { status } = await api.post('user/', { username, email, password });
+    
     if (status == '201')
       return true;
   } catch(error) {
