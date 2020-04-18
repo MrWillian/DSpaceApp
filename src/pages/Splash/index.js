@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { SafeAreaView, View, ImageBackground, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Button from "../../components/Button";
@@ -8,6 +8,16 @@ import image from '../../assets/images/splash-background.jpg';
 
 export default function Splash() {
   const navigation = useNavigation();
+
+  useEffect(() => {
+    storage.load({ key: 'userState',})
+    .then(user => {
+      if (user)
+        navigation.navigate('Main', user);
+    }).catch(err => {
+      console.log(err.message);
+    })
+  }, []);
 
   function navigateToLogin() {
     navigation.navigate('Login');
