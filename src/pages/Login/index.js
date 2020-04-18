@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
-import { SafeAreaView, View, TouchableOpacity, TextInput, ImageBackground, Text } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { 
+  SafeAreaView, View, TouchableOpacity, TextInput, ImageBackground, Text, Alert
+} from 'react-native';
+import Button from '../../components/Button';
 
 import { useNavigation } from '@react-navigation/native';
 
-import Button from '../../components/Button';
-
 import image from '../../assets/images/splash-background.jpg';
 import { styles } from './styles';
+
+import { login } from '../../controllers/AuthController';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -14,7 +17,29 @@ export default function Login() {
 
   const navigation = useNavigation();
 
-  function handleLogin() {
+  useEffect(() => {
+    storage.load({ key: 'userState',})
+    .then(user => {
+      navigation.navigate('Main', user);
+    }).catch(err => {
+      console.log(err.message);
+    })
+  }, []);
+
+  async function handleLogin() {
+    const user = await login(email, password);
+    if (!user) {
+      Alert.alert('Erro', 'Ocorreu um erro ao tentar se autenticar, tente novamente!', [
+        { test: "Cancelar", style: "cancel" }
+      ]);
+      return;
+    }
+
+    storage.save({
+      key: 'userState',
+      data: { user },
+    });
+
     navigation.navigate('Main');
   }
 
@@ -34,7 +59,8 @@ export default function Login() {
           style={styles.textInput} 
           value={password}
           placeholder="Digite sua senha..."
-          onChangeText={password => setPassword(password)} />
+          onChangeText={password => setPassword(password)}
+          secureTextEntry={true} />
         <TouchableOpacity style={styles.forgetPassword}>
           <Text>Esqueceu sua senha?</Text>
         </TouchableOpacity>
